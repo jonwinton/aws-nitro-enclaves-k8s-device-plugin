@@ -24,6 +24,18 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{/*
+DaemonSet name. daemonsetNameOverride replaces the whole name; otherwise keep the
+legacy "<fullname>-aws-nitro-enclaves-k8s-daemonset" so existing releases are not renamed.
+*/}}
+{{- define "aws-nitro-enclaves-k8s-device-plugin.daemonsetName" -}}
+{{- if .Values.daemonsetNameOverride }}
+{{- .Values.daemonsetNameOverride | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- printf "%s-aws-nitro-enclaves-k8s-daemonset" (include "aws-nitro-enclaves-k8s-device-plugin.fullname" .) }}
+{{- end }}
+{{- end }}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "aws-nitro-enclaves-k8s-device-plugin.chart" -}}

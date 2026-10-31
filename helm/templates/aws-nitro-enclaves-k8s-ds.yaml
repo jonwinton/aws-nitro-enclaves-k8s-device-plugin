@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: {{ include "aws-nitro-enclaves-k8s-device-plugin.fullname" . }}-aws-nitro-enclaves-k8s-daemonset
+  name: {{ include "aws-nitro-enclaves-k8s-device-plugin.daemonsetName" . }}
   labels:
     name: aws-nitro-enclaves-k8s-dp
     role: agent

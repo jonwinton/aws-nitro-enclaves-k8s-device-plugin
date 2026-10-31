@@ -36,6 +36,7 @@ $ helm upgrade my-release \
 | awsNitroEnclavesK8SDaemonset.awsNitroEnclavesK8SDp.resources.requests.memory | string | `"15Mi"` |  |
 | awsNitroEnclavesK8SDaemonset.nodeSelector.aws-nitro-enclaves-k8s-dp | string | `"enabled"` |  |
 | awsNitroEnclavesK8SDaemonset.tolerations | list | `[]` |  |
+| daemonsetNameOverride | string | `""` | Override the full DaemonSet name. When empty, the name is "<fullname>-aws-nitro-enclaves-k8s-daemonset". |
 | kubernetesClusterDomain | string | `"cluster.local"` |  |
 
 ----------------------------------------------

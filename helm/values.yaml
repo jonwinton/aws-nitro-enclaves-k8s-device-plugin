@@ -23,3 +23,5 @@ awsNitroEnclavesK8SDaemonset:
     aws-nitro-enclaves-k8s-dp: enabled
   tolerations: []
 kubernetesClusterDomain: cluster.local
+# -- Override the full DaemonSet name. When empty, the name is "<fullname>-aws-nitro-enclaves-k8s-daemonset".
+daemonsetNameOverride: ""
